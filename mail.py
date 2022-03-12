@@ -2,8 +2,8 @@ import smtplib, ssl
 
 port = 465  # For SSL
 smtp_server = "smtp.gmail.com"
-sender_email = "#############@gmail.com"  # Enter your address
-receiver_email = "##########@gmail.com"  # Enter receiver address
+sender_email = "sender@gmail.com"  # Enter your address
+receiver_email = "receiver@gmail.com"  # Enter receiver address
 password = "##############"
 message = """\
 Subject: Hi there
