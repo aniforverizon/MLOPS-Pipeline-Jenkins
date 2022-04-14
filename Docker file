@@ -1,0 +1,20 @@
+FROM centos
+
+RUN cd /etc/yum.repos.d/
+
+RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+RUN yum update -y
+
+RUN yum install -y python36
+RUN yum install -y epel-release
+RUN yum groupinstall -y "development tools"
+RUN yum install -y python36-devel
+RUN pip3 install numpy
+RUN pip3 install pandas
+RUN pip3 install tensorflow
+RUN pip3 install keras
+RUN pip3 install --upgrade pip
+RUN pip3 install setuptools
+RUN pip3 install pillow
+RUN pip3 install opencv-python
